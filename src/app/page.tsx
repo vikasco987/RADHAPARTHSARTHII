@@ -375,10 +375,14 @@
 
 
 import Banner from "../../components/Banner";
-import Categories from "../../components/CategorySection";
+ import Categories from "../components/CategorySection";
+//import HeroSectionWithImage from "../components/HeroSectionWithImage";
+import FoodDonationSection from "../components/FoodDonationSection";
 import ProductGrid from "../../components/ProductGrid";
 import TopDiscountedProducts from "../../components/TopDiscountedProducts";
-import MidBanner from "../../components/MidBanner"; 
+import IskonDwarkaHero from "../components/IskconDwarkaHero";
+// import MidBanner from "../../components/MidBanner"; 
+import TishSection from "../components/TishSection"; 
 import PromisesSection from "../../components/PromisesSection";
 import ReviewSection from "../../components/ReviewSection";
 import Footer from "../../components/Footer";
@@ -389,11 +393,16 @@ export default function HomePage() {
       {/* ✅ Full-width banner (works on laptop + mobile) */}
       <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
         <Banner />
-        <Categories />
+        <IskonDwarkaHero/>
+        {/* <HeroSectionWithImage /> */}
+         <TishSection /> 
+        {/* <Categories /> */}
+        <FoodDonationSection />
         <ProductGrid />
-        <MidBanner />  
+        {/* <MidBanner />   */}
         <TopDiscountedProducts />
         <PromisesSection /> 
+        {/* ✅ Added Tish Section here */}
         <ReviewSection />
          <Footer />
       </div>
@@ -412,3 +421,13 @@ export default function HomePage() {
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
