@@ -373,17 +373,83 @@
 
 
 
+// // import Navbar from "@/components/Navbar"
+// import Banner from "../components/Banner";
+//  import Categories from "../components/CategorySection";
+// //import HeroSectionWithImage from "../components/HeroSectionWithImage";
+// // import FoodDonationSection from "../components/FoodDonationSection";
+// import BhagwatGeetaSection from "@/components/BhagwatGeetaSection";
+// import ProductGrid from "../../components/ProductGrid";
+// import TopDiscountedProducts from "../../components/TopDiscountedProducts";
+// import IskonDwarkaHero from "../components/IskconDwarkaHero";
+// // import MidBanner from "../../components/MidBanner"; 
+// import TishSection from "../components/TishSection"; 
+// import PromisesSection from "../../components/PromisesSection";
+// import ReviewSection from "../../components/ReviewSection";
+// import Footer from "../../components/Footer";
 
-import Banner from "../../components/Banner";
- import Categories from "../components/CategorySection";
-//import HeroSectionWithImage from "../components/HeroSectionWithImage";
+// export default function HomePage() {
+//   return (
+//     <>
+//       {/* ✅ Full-width banner (works on laptop + mobile) */}
+//       <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
+//       {/* <Navbar /> */}
+//         <Banner />
+//         <IskonDwarkaHero/>
+//          <BhagwatGeetaSection />
+//         {/* <HeroSectionWithImage /> */}
+//          <TishSection /> 
+//         {/* <Categories /> */}
+//         {/* <FoodDonationSection /> */}
+//         {/* <ProductGrid /> */}
+//         {/* <MidBanner />   */}
+//         {/* <TopDiscountedProducts />
+//         <PromisesSection />  */}
+//         {/* ✅ Added Tish Section here */}
+//         {/* <ReviewSection />
+//          <Footer /> */}
+//       </div>
+
+//       {/* ✅ Keep other sections centered */}
+//       {/* <div className="container mx-auto px-4">
+//         <Categories />
+//         <ProductGrid />
+//         <MidBanner />  
+//         <TopDiscountedProducts />
+//         <PromisesSection /> 
+//         <ReviewSection />
+//       </div> */}
+
+//       {/* <Footer /> 👈 Footer at the bottom */}
+//     </>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import Navbar from "@/components/Navbar";
+import Banner from "../components/Banner";
+import Categories from "../components/CategorySection";
+// import HeroSectionWithImage from "../components/HeroSectionWithImage";
 // import FoodDonationSection from "../components/FoodDonationSection";
 import BhagwatGeetaSection from "@/components/BhagwatGeetaSection";
 import ProductGrid from "../../components/ProductGrid";
 import TopDiscountedProducts from "../../components/TopDiscountedProducts";
 import IskonDwarkaHero from "../components/IskconDwarkaHero";
-// import MidBanner from "../../components/MidBanner"; 
-import TishSection from "../components/TishSection"; 
+// import MidBanner from "../../components/MidBanner";
+import TishSection from "../components/TishSection";
 import PromisesSection from "../../components/PromisesSection";
 import ReviewSection from "../../components/ReviewSection";
 import Footer from "../../components/Footer";
@@ -391,45 +457,20 @@ import Footer from "../../components/Footer";
 export default function HomePage() {
   return (
     <>
-      {/* ✅ Full-width banner (works on laptop + mobile) */}
-      <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
-        <Banner />
-        <IskonDwarkaHero/>
-         <BhagwatGeetaSection />
-        {/* <HeroSectionWithImage /> */}
-         <TishSection /> 
-        {/* <Categories /> */}
-        {/* <FoodDonationSection /> */}
-        {/* <ProductGrid /> */}
-        {/* <MidBanner />   */}
-        {/* <TopDiscountedProducts />
-        <PromisesSection />  */}
-        {/* ✅ Added Tish Section here */}
-        {/* <ReviewSection />
-         <Footer /> */}
+      {/* ✅ Remove ALL spacing, Navbar fixed to top */}
+      <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen m-0 p-0 top-0">
+        <div className="fixed top-0 left-0 right-0 z-50">
+          <Navbar />
+        </div>
+
+        {/* ✅ Force banner to start exactly at top (no offset) */}
+        <div className="mt-[-1px] pt-0">
+          <Banner />
+          <IskonDwarkaHero />
+          <BhagwatGeetaSection />
+          <TishSection />
+        </div>
       </div>
-
-      {/* ✅ Keep other sections centered */}
-      {/* <div className="container mx-auto px-4">
-        <Categories />
-        <ProductGrid />
-        <MidBanner />  
-        <TopDiscountedProducts />
-        <PromisesSection /> 
-        <ReviewSection />
-      </div> */}
-
-      {/* <Footer /> 👈 Footer at the bottom */}
     </>
   );
 }
-
-
-
-
-
-
-
-
-
-
