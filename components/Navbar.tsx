@@ -320,13 +320,255 @@
 
 
 
+// "use client";
+
+// import React, { useState } from "react";
+// import { Menu, X, Leaf, Volume2, Globe, Send, ChevronDown } from "lucide-react";
+
+// // Logo Path (replace with your actual logo)
+// const LOGO_PATH = "/iskcon_dwarka_logo.svg";
+
+// // Navigation Links
+// const navLinks = [
+//   { name: "ISKCON", href: "/iskcon", dropdown: ["About Us", "Our Mission", "Srila Prabhupada"] },
+//   { name: "Services", href: "/services", dropdown: ["Worship", "Education", "Community"] },
+//   { name: "Donate", href: "/donate" },
+//   { name: "Booking", href: "/booking", dropdown: ["Guest House", "Event Hall"] },
+//   { name: "Temple", href: "/temple", dropdown: ["Darshan Timings", "Aarti Schedule"] },
+// ];
+
+// // Utility Icons
+// const utilityIcons = [
+//   { Icon: Leaf, label: "Seva", href: "/seva" },
+//   { Icon: Send, label: "Share", href: "/share" },
+//   { Icon: Volume2, label: "Audio", href: "/audio" },
+//   { Icon: Globe, label: "Language", href: "/language" },
+// ];
+
+// // ✅ Quick TypeScript Fix — add : { name: any; items: any }
+// const DropdownMenu = ({ name, items }: { name: any; items: any }) => {
+//   const [isOpen, setIsOpen] = useState(false);
+
+//   return (
+//     <div
+//       className="relative group"
+//       onMouseEnter={() => setIsOpen(true)}
+//       onMouseLeave={() => setIsOpen(false)}
+//     >
+//       <button className="flex items-center space-x-1 py-4 px-2 font-medium hover:text-pink-400 transition-colors duration-150">
+//         <span>{name}</span>
+//         <ChevronDown
+//           size={16}
+//           className={`transition-transform duration-200 ${
+//             isOpen ? "rotate-180" : "rotate-0"
+//           }`}
+//         />
+//       </button>
+
+//       {isOpen && (
+//         <div className="absolute left-0 mt-0 w-48 rounded-lg shadow-xl bg-gray-800 text-white z-20">
+//           {items.map((item: any) => (
+//             <a
+//               key={item}
+//               href={`/${name.toLowerCase()}/${item.toLowerCase().replace(/\s/g, "-")}`}
+//               className="block px-4 py-2 text-sm hover:bg-pink-600 hover:text-white rounded-md transition-colors"
+//             >
+//               {item}
+//             </a>
+//           ))}
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// const IskconDwarkaNavbar = () => {
+//   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+//   return (
+//     <nav className="bg-gray-900 text-white shadow-lg relative z-50 font-sans">
+//       <div className="max-w-full mx-auto flex items-center justify-between">
+//         {/* Left Side: Logo Area */}
+//         <div className="bg-pink-600 h-20 w-auto flex-shrink-0 relative group">
+//           <a
+//             href="/"
+//             className="h-full px-6 flex items-center space-x-3 transition-all duration-300"
+//           >
+//             <div className="w-10 h-10 relative">
+//               <Leaf
+//                 size={40}
+//                 className="text-white transform transition-transform group-hover:scale-110"
+//               />
+//             </div>
+//             <div className="flex flex-col text-left">
+//               <span className="text-xl font-extrabold tracking-tight">
+//                 ISKCON Dwarka
+//               </span>
+//               <span className="text-xs opacity-80 mt-[-2px]">
+//                 International Society for Krishna Consciousness
+//               </span>
+//             </div>
+//           </a>
+//         </div>
+
+//         {/* Right Side: Navigation & Icons (Desktop) */}
+//         <div className="hidden lg:flex flex-grow items-center justify-end px-6 space-x-4">
+//           {/* Main Links */}
+//           <div className="flex space-x-2 xl:space-x-4">
+//             {navLinks.map((link) =>
+//               link.dropdown ? (
+//                 <DropdownMenu key={link.name} name={link.name} items={link.dropdown} />
+//               ) : (
+//                 <a
+//                   key={link.name}
+//                   href={link.href}
+//                   className="py-4 px-3 font-medium hover:text-pink-400 transition-colors duration-150"
+//                 >
+//                   {link.name}
+//                 </a>
+//               )
+//             )}
+//           </div>
+
+//           {/* Utility Icons */}
+//           <div className="flex space-x-2 ml-6">
+//             {utilityIcons.map(({ Icon, href, label }) => (
+//               <a
+//                 key={label}
+//                 href={href}
+//                 className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-700 hover:text-pink-500 transition-colors duration-150 shadow-md"
+//                 aria-label={label}
+//               >
+//                 <Icon size={20} />
+//               </a>
+//             ))}
+//           </div>
+
+//           {/* Sign In Button */}
+//           <a
+//             href="/signin"
+//             className="h-14 ml-8 px-6 py-2 bg-pink-600 text-white font-bold rounded-lg shadow-xl hover:bg-pink-700 transition duration-300 flex items-center"
+//           >
+//             Sign in
+//           </a>
+//         </div>
+
+//         {/* Mobile Menu Button */}
+//         <button
+//           className="lg:hidden p-4 text-white"
+//           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+//           aria-label="Toggle navigation menu"
+//         >
+//           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+//         </button>
+//       </div>
+
+//       {/* Mobile Menu */}
+//       <div
+//         className={`lg:hidden transition-all duration-300 ease-in-out ${
+//           isMobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+//         } overflow-hidden bg-gray-800`}
+//       >
+//         <div className="pt-2 pb-3 space-y-1">
+//           {navLinks.map((link) => (
+//             <a
+//               key={link.name}
+//               href={link.href}
+//               className="block px-4 py-2 text-base font-medium text-white hover:bg-pink-600 hover:text-white transition-colors"
+//             >
+//               {link.name}
+//             </a>
+//           ))}
+
+//           <div className="flex justify-around p-4 border-t border-gray-700">
+//             {utilityIcons.map(({ Icon, href, label }) => (
+//               <a
+//                 key={label}
+//                 href={href}
+//                 className="w-10 h-10 flex items-center justify-center text-white hover:text-pink-500 transition-colors"
+//                 aria-label={label}
+//               >
+//                 <Icon size={24} />
+//               </a>
+//             ))}
+//           </div>
+
+//           <a
+//             href="/signin"
+//             className="block mx-4 my-2 px-4 py-3 text-center bg-pink-600 text-white font-bold rounded-lg hover:bg-pink-700 transition"
+//           >
+//             Sign in
+//           </a>
+//         </div>
+//       </div>
+
+//       {/* Global + Tish CSS Fix */}
+//       <style jsx global>{`
+//         html,
+//         body,
+//         #__next,
+//         #root {
+//           margin: 0;
+//           padding: 0;
+//           box-sizing: border-box;
+//           overflow-x: hidden;
+//         }
+
+//         * {
+//           box-sizing: inherit;
+//         }
+
+//         /* Tish Section Animation Fix */
+//         @keyframes tish-scroll {
+//           from {
+//             transform: translateX(0);
+//           }
+//           to {
+//             transform: translateX(calc(-100% / 2));
+//           }
+//         }
+
+//         @keyframes tish-scroll-reverse {
+//           from {
+//             transform: translateX(calc(-100% / 2));
+//           }
+//           to {
+//             transform: translateX(0);
+//           }
+//         }
+
+//         .tish-scroller {
+//           mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+//         }
+
+//         .tish-track {
+//           animation: tish-scroll var(--tish-scroll-duration, 20s) linear infinite;
+//         }
+
+//         .tish-track:hover {
+//           animation-play-state: paused;
+//         }
+//       `}</style>
+//     </nav>
+//   );
+// };
+
+// export default IskconDwarkaNavbar;
+
+
+
+
+
+
+
+
+
+
+
 "use client";
 
 import React, { useState } from "react";
 import { Menu, X, Leaf, Volume2, Globe, Send, ChevronDown } from "lucide-react";
-
-// Logo Path (replace with your actual logo)
-const LOGO_PATH = "/iskcon_dwarka_logo.svg";
 
 // Navigation Links
 const navLinks = [
@@ -345,7 +587,7 @@ const utilityIcons = [
   { Icon: Globe, label: "Language", href: "/language" },
 ];
 
-// ✅ Quick TypeScript Fix — add : { name: any; items: any }
+// ✅ Quick Type Fix
 const DropdownMenu = ({ name, items }: { name: any; items: any }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -355,18 +597,16 @@ const DropdownMenu = ({ name, items }: { name: any; items: any }) => {
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <button className="flex items-center space-x-1 py-4 px-2 font-medium hover:text-pink-400 transition-colors duration-150">
+      <button className="flex items-center space-x-1 py-3 px-2 font-medium hover:text-pink-400 transition-colors duration-150">
         <span>{name}</span>
         <ChevronDown
           size={16}
-          className={`transition-transform duration-200 ${
-            isOpen ? "rotate-180" : "rotate-0"
-          }`}
+          className={`transition-transform duration-200 ${isOpen ? "rotate-180" : "rotate-0"}`}
         />
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 mt-0 w-48 rounded-lg shadow-xl bg-gray-800 text-white z-20">
+        <div className="absolute left-0 mt-0 w-44 sm:w-48 rounded-lg shadow-xl bg-gray-800 text-white z-30">
           {items.map((item: any) => (
             <a
               key={item}
@@ -387,33 +627,30 @@ const IskconDwarkaNavbar = () => {
 
   return (
     <nav className="bg-gray-900 text-white shadow-lg relative z-50 font-sans">
-      <div className="max-w-full mx-auto flex items-center justify-between">
-        {/* Left Side: Logo Area */}
-        <div className="bg-pink-600 h-20 w-auto flex-shrink-0 relative group">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-6">
+        {/* Logo */}
+        <div className="bg-pink-600 h-16 sm:h-20 flex-shrink-0 relative group">
           <a
             href="/"
-            className="h-full px-6 flex items-center space-x-3 transition-all duration-300"
+            className="h-full px-4 sm:px-6 flex items-center space-x-3 transition-all duration-300"
           >
-            <div className="w-10 h-10 relative">
-              <Leaf
-                size={40}
-                className="text-white transform transition-transform group-hover:scale-110"
-              />
-            </div>
+            <Leaf
+              size={36}
+              className="text-white transform transition-transform group-hover:scale-110"
+            />
             <div className="flex flex-col text-left">
-              <span className="text-xl font-extrabold tracking-tight">
+              <span className="text-lg sm:text-xl font-extrabold tracking-tight">
                 ISKCON Dwarka
               </span>
-              <span className="text-xs opacity-80 mt-[-2px]">
+              <span className="text-[10px] sm:text-xs opacity-80">
                 International Society for Krishna Consciousness
               </span>
             </div>
           </a>
         </div>
 
-        {/* Right Side: Navigation & Icons (Desktop) */}
-        <div className="hidden lg:flex flex-grow items-center justify-end px-6 space-x-4">
-          {/* Main Links */}
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex flex-grow items-center justify-end space-x-4">
           <div className="flex space-x-2 xl:space-x-4">
             {navLinks.map((link) =>
               link.dropdown ? (
@@ -444,10 +681,9 @@ const IskconDwarkaNavbar = () => {
             ))}
           </div>
 
-          {/* Sign In Button */}
           <a
             href="/signin"
-            className="h-14 ml-8 px-6 py-2 bg-pink-600 text-white font-bold rounded-lg shadow-xl hover:bg-pink-700 transition duration-300 flex items-center"
+            className="ml-6 px-5 py-2 bg-pink-600 text-white font-semibold rounded-lg shadow-lg hover:bg-pink-700 transition duration-300"
           >
             Sign in
           </a>
@@ -455,7 +691,7 @@ const IskconDwarkaNavbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden p-4 text-white"
+          className="lg:hidden p-3 text-white focus:outline-none"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle navigation menu"
         >
@@ -463,23 +699,48 @@ const IskconDwarkaNavbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Dropdown */}
       <div
         className={`lg:hidden transition-all duration-300 ease-in-out ${
           isMobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         } overflow-hidden bg-gray-800`}
       >
-        <div className="pt-2 pb-3 space-y-1">
+        <div className="py-3 space-y-1">
           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="block px-4 py-2 text-base font-medium text-white hover:bg-pink-600 hover:text-white transition-colors"
-            >
-              {link.name}
-            </a>
+            <div key={link.name}>
+              {link.dropdown ? (
+                <details className="group">
+                  <summary className="flex justify-between items-center px-4 py-2 text-base font-medium cursor-pointer hover:bg-pink-600/70 hover:text-white">
+                    {link.name}
+                    <ChevronDown
+                      size={18}
+                      className="group-open:rotate-180 transition-transform"
+                    />
+                  </summary>
+                  <div className="bg-gray-700">
+                    {link.dropdown.map((item) => (
+                      <a
+                        key={item}
+                        href={`/${link.name.toLowerCase()}/${item.toLowerCase().replace(/\s/g, "-")}`}
+                        className="block px-6 py-2 text-sm text-gray-200 hover:bg-pink-600 hover:text-white transition-colors"
+                      >
+                        {item}
+                      </a>
+                    ))}
+                  </div>
+                </details>
+              ) : (
+                <a
+                  href={link.href}
+                  className="block px-4 py-2 text-base font-medium text-white hover:bg-pink-600 hover:text-white transition-colors"
+                >
+                  {link.name}
+                </a>
+              )}
+            </div>
           ))}
 
+          {/* Mobile Utility Icons */}
           <div className="flex justify-around p-4 border-t border-gray-700">
             {utilityIcons.map(({ Icon, href, label }) => (
               <a
@@ -495,60 +756,12 @@ const IskconDwarkaNavbar = () => {
 
           <a
             href="/signin"
-            className="block mx-4 my-2 px-4 py-3 text-center bg-pink-600 text-white font-bold rounded-lg hover:bg-pink-700 transition"
+            className="block mx-4 mb-4 px-4 py-3 text-center bg-pink-600 text-white font-bold rounded-lg hover:bg-pink-700 transition"
           >
             Sign in
           </a>
         </div>
       </div>
-
-      {/* Global + Tish CSS Fix */}
-      <style jsx global>{`
-        html,
-        body,
-        #__next,
-        #root {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          overflow-x: hidden;
-        }
-
-        * {
-          box-sizing: inherit;
-        }
-
-        /* Tish Section Animation Fix */
-        @keyframes tish-scroll {
-          from {
-            transform: translateX(0);
-          }
-          to {
-            transform: translateX(calc(-100% / 2));
-          }
-        }
-
-        @keyframes tish-scroll-reverse {
-          from {
-            transform: translateX(calc(-100% / 2));
-          }
-          to {
-            transform: translateX(0);
-          }
-        }
-
-        .tish-scroller {
-          mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
-        }
-
-        .tish-track {
-          animation: tish-scroll var(--tish-scroll-duration, 20s) linear infinite;
-        }
-
-        .tish-track:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </nav>
   );
 };
