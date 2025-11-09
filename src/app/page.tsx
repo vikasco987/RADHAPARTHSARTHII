@@ -377,7 +377,7 @@
 import Banner from "../../components/Banner";
  import Categories from "../components/CategorySection";
 //import HeroSectionWithImage from "../components/HeroSectionWithImage";
-import FoodDonationSection from "../components/FoodDonationSection";
+// import FoodDonationSection from "../components/FoodDonationSection";
 import BhagwatGeetaSection from "@/components/BhagwatGeetaSection";
 import ProductGrid from "../../components/ProductGrid";
 import TopDiscountedProducts from "../../components/TopDiscountedProducts";

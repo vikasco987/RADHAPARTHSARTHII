@@ -320,9 +320,6 @@
 
 
 
-
-
-
 "use client";
 
 import React, { useState } from "react";
@@ -348,8 +345,8 @@ const utilityIcons = [
   { Icon: Globe, label: "Language", href: "/language" },
 ];
 
-// Dropdown Menu Component
-const DropdownMenu = ({ name, items }) => {
+// ✅ Quick TypeScript Fix — add : { name: any; items: any }
+const DropdownMenu = ({ name, items }: { name: any; items: any }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -370,7 +367,7 @@ const DropdownMenu = ({ name, items }) => {
 
       {isOpen && (
         <div className="absolute left-0 mt-0 w-48 rounded-lg shadow-xl bg-gray-800 text-white z-20">
-          {items.map((item) => (
+          {items.map((item: any) => (
             <a
               key={item}
               href={`/${name.toLowerCase()}/${item.toLowerCase().replace(/\s/g, "-")}`}
