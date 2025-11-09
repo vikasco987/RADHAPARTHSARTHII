@@ -378,6 +378,7 @@ import Banner from "../../components/Banner";
  import Categories from "../components/CategorySection";
 //import HeroSectionWithImage from "../components/HeroSectionWithImage";
 import FoodDonationSection from "../components/FoodDonationSection";
+import BhagwatGeetaSection from "@/components/BhagwatGeetaSection";
 import ProductGrid from "../../components/ProductGrid";
 import TopDiscountedProducts from "../../components/TopDiscountedProducts";
 import IskonDwarkaHero from "../components/IskconDwarkaHero";
@@ -394,17 +395,18 @@ export default function HomePage() {
       <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
         <Banner />
         <IskonDwarkaHero/>
+         <BhagwatGeetaSection />
         {/* <HeroSectionWithImage /> */}
          <TishSection /> 
         {/* <Categories /> */}
-        <FoodDonationSection />
-        <ProductGrid />
+        {/* <FoodDonationSection /> */}
+        {/* <ProductGrid /> */}
         {/* <MidBanner />   */}
-        <TopDiscountedProducts />
-        <PromisesSection /> 
+        {/* <TopDiscountedProducts />
+        <PromisesSection />  */}
         {/* ✅ Added Tish Section here */}
-        <ReviewSection />
-         <Footer />
+        {/* <ReviewSection />
+         <Footer /> */}
       </div>
 
       {/* ✅ Keep other sections centered */}
