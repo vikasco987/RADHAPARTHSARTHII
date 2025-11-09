@@ -1149,7 +1149,7 @@ import Image from "next/image";
 const images = [
   "/y1.avif",
   "/y2.avif",
-  "/y3.avif",
+  "/y3.jpeg",
   "/y4.avif",
   "/y5.avif",
   "/y6.avif",
