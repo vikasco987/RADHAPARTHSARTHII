@@ -439,6 +439,51 @@
 
 
 
+// import Navbar from "@/components/Navbar";
+// import Banner from "../components/Banner";
+// import Categories from "../components/CategorySection";
+// // import HeroSectionWithImage from "../components/HeroSectionWithImage";
+// // import FoodDonationSection from "../components/FoodDonationSection";
+// import BhagwatGeetaSection from "@/components/BhagwatGeetaSection";
+// import ProductGrid from "../../components/ProductGrid";
+// import TopDiscountedProducts from "../../components/TopDiscountedProducts";
+// import IskonDwarkaHero from "../components/IskconDwarkaHero";
+// // import MidBanner from "../../components/MidBanner";
+// import TishSection from "../components/TishSection";
+// import PromisesSection from "../../components/PromisesSection";
+// import ReviewSection from "../../components/ReviewSection";
+// import Footer from "../../components/Footer";
+
+// export default function HomePage() {
+//   return (
+//     <>
+//       {/* ✅ Remove ALL spacing, Navbar fixed to top */}
+//       <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen m-0 p-0 top-0">
+//         <div className="fixed top-0 left-0 right-0 z-50">
+//           <Navbar />
+//         </div>
+
+//         {/* ✅ Force banner to start exactly at top (no offset) */}
+//         <div className="mt-[-1px] pt-0">
+//           <Banner />
+//           <IskonDwarkaHero />
+//           <BhagwatGeetaSection />
+//           <TishSection />
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
 import Navbar from "@/components/Navbar";
 import Banner from "../components/Banner";
 import Categories from "../components/CategorySection";
@@ -474,3 +519,60 @@ export default function HomePage() {
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+// import Navbar from "@/components/Navbar";
+// import Banner from "../components/Banner";
+// import Categories from "../components/CategorySection";
+// // import HeroSectionWithImage from "../components/HeroSectionWithImage";
+// // import FoodDonationSection from "../components/FoodDonationSection";
+// import BhagwatGeetaSection from "@/components/BhagwatGeetaSection";
+// import ProductGrid from "../../components/ProductGrid";
+// import TopDiscountedProducts from "../../components/TopDiscountedProducts";
+// import IskonDwarkaHero from "../components/IskconDwarkaHero";
+// // import MidBanner from "../../components/MidBanner";
+// import TishSection from "../components/TishSection";
+// import PromisesSection from "../../components/PromisesSection";
+// import ReviewSection from "../../components/ReviewSection";
+// import Footer from "../../components/Footer";
+
+// export default function HomePage() {
+//   return (
+//     <>
+//       {/* ✅ Remove all global spacing */}
+//       <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen m-0 p-0 top-0 overflow-x-hidden">
+//         {/* ✅ Sticky navbar (no gap, no overlay issue) */}
+//         <div className="sticky top-0 z-50 m-0 p-0">
+//           <Navbar />
+//         </div>
+
+//         {/* ✅ Remove any top space completely */}
+//         <div className="m-0 p-0">
+//           <Banner />
+//           <IskonDwarkaHero />
+//           <BhagwatGeetaSection />
+//           <TishSection />
+//           {/* Add other sections as needed */}
+//           {/* <Categories /> */}
+//           {/* <ProductGrid /> */}
+//           {/* <TopDiscountedProducts /> */}
+//           {/* <PromisesSection /> */}
+//           {/* <ReviewSection /> */}
+//           {/* <Footer /> */}
+//         </div>
+//       </div>
+
+//       {/* ✅ Force remove browser default body margin */}
+     
+//     </>
+//   );
+// }
