@@ -22,7 +22,6 @@ body {
   box-sizing: inherit;
 }
 
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -243,4 +242,18 @@ body {
 
 @media (min-width: 1024px) {
   .tish-item { width: 300px; height: 200px; }
+}
+
+/* === 👇 Krishna spinning background image === */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
 }

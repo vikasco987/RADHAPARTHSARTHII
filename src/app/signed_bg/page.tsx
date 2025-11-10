@@ -1,13 +1,11 @@
-// src/app/signed_bg/page.tsx
 import React from "react";
 import Image from "next/image";
-import GitaCover from "@/public/gita-cover.png"; // Replace with your Bhagavad Gita cover image
 
 const SignedBGPage = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center p-6">
-      {/* Container */}
-      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-8 items-center">
+    <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center p-6 relative overflow-hidden">
+      {/* Main Container */}
+      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-8 items-center relative z-10">
         {/* Left: Text & CTA */}
         <div className="space-y-6">
           <h1 className="text-4xl md:text-5xl font-serif font-bold leading-snug">
@@ -42,15 +40,30 @@ const SignedBGPage = () => {
           </button>
         </div>
 
-        {/* Right: Book Image with Halo */}
+        {/* Right: Book Image with Krishna behind it */}
         <div className="relative flex justify-center items-center">
           {/* Halo */}
-          <div className="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-yellow-400 opacity-20 animate-pulse"></div>
+          <div className="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-yellow-400 opacity-20 animate-pulse z-10"></div>
 
-          {/* Book Image */}
-          <div className="relative w-64 md:w-72 shadow-2xl">
+          {/* Krishna background image - now spinning */}
+          {/* <div className="absolute bottom-6 w-80 md:w-96 lg:w-[28rem] z-0 animate-spin-slow"> */}
+          {/* <div className="absolute bottom-0 w-80 md:w-96 lg:w-[28rem] z-0 animate-spin-slow"> */}
+          <div className="absolute -bottom-10 w-80 md:w-96 lg:w-[28rem] z-0 animate-spin-slow">
+
+
             <Image
-              src={GitaCover}
+              src="/krishna.png"
+              alt="Krishna Background"
+              className="object-contain"
+              width={448}   // increased width
+              height={448}  // increased height
+            />
+          </div>
+
+          {/* Bhagavad Gita Book Image */}
+          <div className="relative w-64 md:w-72 shadow-2xl z-20">
+            <Image
+              src="/gita-cover.png"
               alt="Bhagavad Gita Cover"
               className="rounded-xl"
               width={288}
@@ -58,9 +71,9 @@ const SignedBGPage = () => {
             />
           </div>
 
-          {/* Accents */}
-          <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-white opacity-30 rotate-12"></div>
-          <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-white opacity-30 rotate-45"></div>
+          {/* Angular accents */}
+          <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-white opacity-30 rotate-12 z-20"></div>
+          <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-white opacity-30 rotate-45 z-20"></div>
         </div>
       </div>
     </div>
