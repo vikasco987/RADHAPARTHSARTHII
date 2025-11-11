@@ -3,11 +3,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* === Base Reset === */
 html,
 body {
   height: 100%;
   min-height: 100vh;
-  background-color: #f9fafb;
+  background-color: #0f0f0f; /* darker background to blend Krishna image */
   margin: 0;
   padding: 0;
   width: 100%;
@@ -22,6 +23,7 @@ body {
   box-sizing: inherit;
 }
 
+/* === Theme Variables === */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -62,6 +64,7 @@ body {
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* === Light & Dark Theme Colors === */
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -140,9 +143,7 @@ body {
   }
 }
 
-/* === 👇 Add your Tish Section styles here === */
-
-/* Create the elongated oval image corners */
+/* === Tish Section Custom Styles === */
 .custom-oval-radius {
   border-radius: 9999px / 40%;
 }
@@ -157,43 +158,35 @@ body {
 }
 
 /* ===== Auto-scroll Tish styles ===== */
-
-/* scroll speed: change the duration to make it faster/slower */
 :root {
   --tish-scroll-duration: 30s;
 }
 
-/* scroller wrapper */
 .tish-scroller {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
-/* the moving track that contains two groups for seamless loop */
 .tish-track {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  /* track is duplicated content (two groups inside) and we translate -50% */
   animation: tish-scroll var(--tish-scroll-duration) linear infinite;
   will-change: transform;
 }
 
-/* pause on hover */
 .tish-scroller:hover .tish-track,
 .tish-track.is-paused {
   animation-play-state: paused;
 }
 
-/* group contains one copy of the items */
 .tish-group {
   display: flex;
   gap: 1.5rem;
   align-items: center;
 }
 
-/* each item sizing + oval image */
 .tish-item {
   flex: 0 0 auto;
   width: 220px;
@@ -204,9 +197,7 @@ body {
   box-shadow: 0 6px 18px rgba(17, 24, 39, 0.08);
 }
 
-/* image inside using object-fit */
-.tish-item img,
-.tish-item .next-image {
+.tish-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -214,13 +205,12 @@ body {
   border-radius: inherit;
 }
 
-/* overlay label (optional) */
 .tish-item .label {
   position: absolute;
   bottom: 8px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0,0,0,0.36);
+  background: rgba(0, 0, 0, 0.36);
   color: #fff;
   padding: 6px 10px;
   border-radius: 9999px;
@@ -229,22 +219,30 @@ body {
   backdrop-filter: blur(4px);
 }
 
-/* keyframes: shift left by half (because we duplicate content) */
 @keyframes tish-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-/* responsive sizes */
 @media (min-width: 768px) {
-  .tish-item { width: 260px; height: 180px; }
+  .tish-item {
+    width: 260px;
+    height: 180px;
+  }
 }
 
 @media (min-width: 1024px) {
-  .tish-item { width: 300px; height: 200px; }
+  .tish-item {
+    width: 300px;
+    height: 200px;
+  }
 }
 
-/* === 👇 Krishna spinning background image === */
+/* === Krishna spinning background image === */
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);
