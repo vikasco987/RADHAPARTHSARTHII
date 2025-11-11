@@ -1,14 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async redirects() {
-    return [
-      {
-        source: '/signed_bg',
-        destination: 'https://zfrmz.in/7oGOIs1yHb2rUlfpiQ8K',
-        permanent: false, // set true if this is a forever redirect
-      },
-    ]
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "drive.google.com" },
+      { protocol: "https", hostname: "res.cloudinary.com" },
+      { protocol: "https", hostname: "ibb.co" },
+      { protocol: "http", hostname: "localhost" },
+    ],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
