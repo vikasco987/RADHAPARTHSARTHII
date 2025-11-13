@@ -42,12 +42,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/gita_custom",
-        destination: "https://zfrmz.in/7oGOIs1yHb2rUlfpiQ8K",
+        destination: "https://zfrmz.in/dwSUjlTEpbxoJ3M3lhDN",
         permanent: false,
       },
       {
         source: "/gitateam",
-        destination: "https://zfrmz.in/dwSUjlTEpbxoJ3M3lhDN",
+        destination: "https://forms.gle/JhAtDeAiG9afk2mj6",
         permanent: false,
       },
       {
