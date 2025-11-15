@@ -15,7 +15,7 @@ export default function ComingSoon() {
       </p>
 
       <a
-        href="https://iyfdwarka.in/sign"
+        href="http://iyfdwarka.in/gita"
         style={{
           display: "inline-block",
           padding: "12px 22px",
